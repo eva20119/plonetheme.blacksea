@@ -83,6 +83,19 @@
 
   <!-- Footer -->
   <replace css:theme-children="#portal-footer" css:content-children="#portal-footer-wrapper" />
+
+  <!--edit zone-->
+  <drop css:content="#edit-zone" />
+  <!--path_bar-->
+  <replace css:content="#path_bar" css:theme=".banner.inner-banner.align-center" css:if-not-content=".portaltype-cover"/>
+  <!--banner-->
+  <replace css:content="#cover_banner" css:theme=".banner.inner-banner.align-center" css:if-content=".portaltype-cover"/>
+
+  <!--nav-->
+  <replace css:content="#menu" css:theme="#menu" />
+  <!--logo-->
+  <replace css:content="#portal-logo" css:theme=".navbar-brand.page-scroll" />
+
 </rules>
 </rules>
 

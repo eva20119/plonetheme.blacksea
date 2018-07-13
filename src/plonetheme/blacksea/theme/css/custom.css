@@ -868,7 +868,7 @@ _______________________________________________________*/
 	letter-spacing: 3px;
 }
 .inner-banner {
-	background: url(../images/inner-banner.jpg) no-repeat scroll center center;
+	background: url(../images/default.jpg) no-repeat scroll center center;
 	padding: 150px 0 100px;
 }
 .inner-banner .banner-detail {
@@ -2733,3 +2733,7 @@ ul.tagcloud li a:hover {
 	cursor: pointer;
 }
 /* Scroll-top Arrow CSS End */
+
+.nav.navbar-nav .selected .page-scroll{
+    color: #61ff6d;
+}

@@ -1,0 +1,26 @@
+<tal:sections
+     xmlns:tal="http://xml.zope.org/namespaces/tal"
+     xmlns:metal="http://xml.zope.org/namespaces/metal"
+     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+     tal:define="portal_tabs view/portal_tabs"
+     tal:condition="portal_tabs"
+     i18n:domain="plone">
+
+<div id="menu" class="navbar-collapse collapse" >
+  <ul class="nav navbar-nav" tal:define="selected_tab python:view.selected_portal_tab">
+    <tal:tabs tal:repeat="tab portal_tabs">
+       <li tal:define="tid tab/id"
+           tal:attributes="id string:portaltab-${tid};class python:selected_tab==tid and 'selected' or nothing" class="level">
+            <a href="" class="page-scroll"
+               tal:content="tab/name"
+               tal:attributes="href tab/url;
+                        title tab/description|nothing;
+                        target tab/link_target|nothing;">
+            Tab Name
+            </a>
+         </li>
+     </tal:tabs>
+  </ul>
+</div>
+
+</tal:sections>

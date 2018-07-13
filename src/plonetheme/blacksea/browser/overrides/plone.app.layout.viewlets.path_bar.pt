@@ -1,0 +1,38 @@
+  <div class="banner inner-banner align-center" tal:define="breadcrumbs view/breadcrumbs;
+							    image_url python: view.context.absolute_url() + '/@@images/image' "
+        id="path_bar"  
+         style="height:344px;margin-bottom:20px;
+	        background: url(${python: image_url if view.context.getIcon() else '++theme++blacksea/images/default.jpg'}) no-repeat scroll center center" >
+    <div class="container">
+      <section class="banner-detail">
+        <div class="bread-crumb mt-30"  >
+          <ul>
+             <li id="breadcrumbs-home">
+                <a i18n:translate="tabs_home"
+                   tal:attributes="href view/navigation_root_url">Home</a>
+             </li>
+               <span style="color:white;font-size:20px"> > </span>
+              <li tal:repeat="crumb breadcrumbs"
+                  tal:attributes="id string:breadcrumbs-${repeat/crumb/number};">
+                <tal:item tal:define="is_last repeat/crumb/end;
+                                url crumb/absolute_url;
+                                title crumb/Title">
+                  <a href="#"
+                     tal:omit-tag="not: url"
+                     tal:condition="python:not is_last"
+                     tal:attributes="href url"
+                     tal:content="title">
+                        crumb
+                  </a>
+                  <span id="breadcrumbs-currrent"
+                        tal:condition="is_last"
+                        style="color: red">${title}</span>
+              </tal:item>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+
+
