@@ -11,12 +11,13 @@
                 <a i18n:translate="tabs_home"
                    tal:attributes="href view/navigation_root_url">Home</a>
              </li>
-               <span style="color:white;font-size:20px"> > </span>
               <li tal:repeat="crumb breadcrumbs"
                   tal:attributes="id string:breadcrumbs-${repeat/crumb/number};">
                 <tal:item tal:define="is_last repeat/crumb/end;
                                 url crumb/absolute_url;
                                 title crumb/Title">
+                  <span style="color:white;font-size:20px"> > </span>
+
                   <a href="#"
                      tal:omit-tag="not: url"
                      tal:condition="python:not is_last"

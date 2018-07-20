@@ -1,0 +1,59 @@
+<section class="pt-95" id='cover_new_product'>
+    <div class="container">
+      <div class="product-slider">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="heading-part align-center mb-40">
+              <h2 class="main_title">News Products</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="product-slider-main position-r">
+            <div class="owl-carousel pro_cat_slider">
+              <div class="item" tal:repeat="product view/productBrain">
+                <div class="product-item" tal:define="obj python: product.getObject();
+                                                      obj_url python: obj.absolute_url()">
+                  <div class="sale-label"><span>Sale</span></div>
+                  <div class="product-image"> 
+                   <a href="${obj_url}"> <img src="${python: obj_url + '/@@images/cover1'}" alt=""> </a>
+                    <div class="product-detail-inner">
+                      <div class="detail-inner-left left-side">
+                        <ul>
+                          <li class="pro-cart-icon">
+                            <form>
+                              <button title="Add to Cart"></button>
+                            </form>
+                          </li>
+                          <li class="pro-wishlist-icon"><a href="#"></a></li>
+                          <li class="pro-compare-icon"><a href="#"></a></li>
+                        </ul>
+                      </div>
+                      <div class="rating-summary-block right-side">
+                        <div title="53%" class="rating-result"> <span style="width:53%"></span> </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-item-details">
+                    <div class="product-item-name"> <a href="${python: obj_url}"> ${python: obj.title}</a></div>
+                    <div class="price-box">
+ 
+                      <tal:condition condition="python: obj.salePrice">
+                        <span class="price">${python: obj.salePrice}</span> 
+                        <del class="price old-price" >${python: obj.price}</del>
+                      </tal:condition>
+
+                      <tal:condition condition="not: python: obj.salePrice">
+                        <span class="price">${python: obj.price}</span> 
+                      </tal:condition>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
