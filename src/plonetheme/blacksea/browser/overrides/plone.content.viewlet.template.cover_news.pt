@@ -1,13 +1,14 @@
-<section class="ptb-95 client-main client-bg align-center dark-bg" id='cover_news' >
+<section class="ptb-95 client-main client-bg align-center dark-bg" id='cover_news' 
+     style='background-image: url(++theme++blacksea/images/cover_news_background.jpg)'>
     <div class="container">
       <div class="client-inner">
         <div id="client" class="owl-carousel">
           <div class="item client-detail" tal:repeat="news view/newsBrain">
             <div class="client-img" tal:define="obj python: news.getObject()" >
-              <img src="++theme++blacksea/images/testimonial_img1.jpg">
+              <img src="++theme++blacksea/images/favicon.png" style='width: 35px'>
             </div>
-            <h4 class="sub-title client-title">${news/Title}</h4>
-            <p>${news/Description}</p>
+            <h4 class="sub-title client-title" style='color: black'>${news/Title}</h4>
+            <p style='color: black'>${news/Description}</p>
           </div>   
         </div>
       </div>

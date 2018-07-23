@@ -4,7 +4,7 @@
                    title view/navigation_root_title"
    i18n:domain="plone"
    i18n:attributes="title" class="navbar-brand page-scroll">
-    <img src="logo.png" alt=""
+    <img src="logo.png" style="width: 30px"
          tal:attributes="alt view/logo_title;
                          title view/logo_title;
                          src view/img_src" /></a>

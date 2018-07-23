@@ -95,11 +95,18 @@
   <replace css:content="#menu" css:theme="#menu" />
   <!--logo-->
   <replace css:content="#portal-logo" css:theme=".navbar-brand.page-scroll" />
-  <!--cover_news-->
-  <after css:content="#cover_news" css:theme=".banner.inner-banner.align-center" /> 
   <!--cover_new_product-->
   <after css:content="#cover_new_product" css:theme=".banner.inner-banner.align-center" />
-
+  <!--cover_news-->
+  <after css:content="#cover_news" css:theme=".banner.inner-banner.align-center" /> 
+  <!--cart and account icon-->
+  <drop css:theme=".account-icon" />
+  <drop css:theme=".cart-icon" />
+  <!--new footer-->
+  <replace css:content=".footer.dark-bg" css:theme=".footer.dark-bg" />
+  <!--subscribe mail-->
+  <replace css:content=".newsletter" css:theme=".newsletter" />
+  
 </rules>
 </rules>
 

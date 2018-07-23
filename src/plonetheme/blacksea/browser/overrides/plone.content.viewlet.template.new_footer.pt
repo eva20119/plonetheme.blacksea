@@ -1,0 +1,92 @@
+<?python
+from plone import api
+import datetime
+abs_url = api.portal.get().absolute_url()
+year = datetime.datetime.now().year
+?>
+  <section>
+    <div class="newsletter">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="newsletter-inner center-sm">
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="newsletter-title">
+                    <div class="newsletter-icon"> <img alt="Honour" src="++theme++blacksea/images/newsletter-icon.png"> </div>
+                    <h2 class="main_title">Subscribe Emails</h2>
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <form action="${abs_url}/subscribe_mail" method="post">
+                    <input type="email" placeholder="Email Here..." name="email" required>
+                    <button title="Subscribe" class="btn-color">Subscribe</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<div class="footer dark-bg">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-middle">
+          <div class="row">
+            <div class="col-md-4 f-col">
+              <div class="footer-static-block"> <span class="opener plus"></span>
+                <div class="f-logo"> 
+                     <a href="${abs_url}" class=""> <img src="++theme++blacksea/images/footer-logo.png" alt="Honour"> </a> </div>
+                <ul class="footer-block-contant address-footer">
+                  <li class="item"> <i class="fa fa-map-marker"> </i>
+                    <p>${view/address}</p>
+                    <hr>
+                  </li>
+                  <li class="item"> <i class="fa fa-envelope-o"> </i>
+                    <p> <a>${view/email} </a> </p>
+                    <hr>
+                  </li>
+                  <li class="item"> <i class="fa fa-phone"> </i>
+                    <p>${view/cellphone}</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+      <div class='col-md-4'></div>
+            <div class="col-md-4 f-col">
+              <div class="footer-static-block"> <span class="opener plus"></span>
+                <h3 class="title">Contact Us</h3>
+                <div class="footer-block-contant">
+                  <form action="${abs_url}/send_mail" method="post">
+                    <div class="field">
+                      <input type="text" placeholder="Name"  name="name" required>
+                    </div>
+                    <div class="field">
+                      <input type="email" placeholder="Email" name="email" required>
+                    </div>
+                    <div class="field">
+                      <textarea name="Message" placeholder="Message" name="msg" required id="message" cols="5" rows="2"></textarea>
+                    </div>
+                    <div class="field">
+                      <button title="Subscribe" class="btn-color">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="footer-bottom">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="copy-right center-xs"
+                   style='text-align: center'>© ${year}  All Rights Reserved. Design By <a href="#">${view/company}</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -2,7 +2,7 @@
 <div class="main-banner">
   <tal:repeat repeat="banner view/bannerList">
     <div class="banner-1" tal:define="number repeat/banner/number" tal:condition="python: repeat.banner.number <= 6">
-      <img src="${python: banner.absolute_url()}" alt="Honour" >
+      <img src="${python: banner.absolute_url()}" alt="Honour" style='width: 1902px;height: 768px'>
       <div class="banner-detail">
         <div class="row">
           <div class="col-sm-5 col-xs-4"></div>
